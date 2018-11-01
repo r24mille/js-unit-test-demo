@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as carbonIntensityActions from '../../store/carbon-intensity-reducer'
+import * as carbonIntensityActions from '../../store/carbon-intensity-reducer';
+import CarbonIntensityWidget from '../presentational/carbon-intensity-widget'
 import "../../app.css";
 
-class AsyncApp extends Component {
+class App extends Component {
     constructor(props) {
         super(props);
     }
@@ -14,14 +15,10 @@ class AsyncApp extends Component {
     }
 
     render() {
-        let intesity = this.props.carbonIntensity && this.props.carbonIntensity.details && this.props.carbonIntensity.details.intensity.actual;
-
         return (
             <div className="App">
-                <h1>UK Carbon Intensity: {intesity} gCO<sub>2</sub>/kWh</h1>
-                <ul>
-                    <li>Request Pending: {this.props.carbonIntensity.pending ? 'true' : 'false'}</li>
-                </ul>
+                <h1>UK Carbon Intensity</h1>
+                <CarbonIntensityWidget carbonIntensity={this.props.carbonIntensity} />
             </div>
         );
     }
@@ -37,4 +34,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AsyncApp);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
