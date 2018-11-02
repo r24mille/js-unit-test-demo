@@ -9,13 +9,13 @@ const initialState = {
 }
 
 // Action Creators
-export const requestIntensity = () => {
+const requestIntensity = () => {
     return {
         type: REQUEST_CARBON_INTENSITY
     }
 }
 
-export const receiveIntensity = carbonIntensityDetails => {
+const receiveIntensity = carbonIntensityDetails => {
     return {
         type: RECEIVE_CARBON_INTENSITY,
         payload: carbonIntensityDetails
