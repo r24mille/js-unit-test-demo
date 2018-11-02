@@ -12,7 +12,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <h1>UK Carbon Intensity</h1>
+                <h1>Great Britain's Carbon Intensity</h1>
                 <CarbonIntensityWidget carbonIntensity={this.props.carbonIntensity} />
             </div>
         );
