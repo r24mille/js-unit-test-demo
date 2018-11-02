@@ -29,8 +29,8 @@ export const fetchIntensity = () => {
          * the reducer to use when mutating the Redux state.
          */
         dispatch(requestIntensity());
-        carbonIntensityService.getCarbonIntensityDetailsAsync()
-                              .then(details => dispatch(receiveIntensity(details)));
+        return carbonIntensityService.getCarbonIntensityDetailsAsync()
+                                     .then(details => dispatch(receiveIntensity(details)));
     }
 }
 
