@@ -3,13 +3,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as carbonIntensityActions from '../../store/carbon-intensity-reducer';
 import CarbonIntensityWidget from '../presentational/carbon-intensity-widget'
-import "../../app.css";
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
         this.props.carbonIntensityActions.fetchIntensity();
     }
